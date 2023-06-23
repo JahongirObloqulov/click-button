@@ -1,0 +1,99 @@
+:root {
+    --bgColor: #fff;
+    --fontColor: #000;
+    --menuColor: #1426e5;
+}
+
+.dark {
+    --bgColor: #000;
+    --fontColor: #fff;
+    --menuColor: #fff;
+}
+
+body {
+    background-color: var(--bgColor);
+    color: var(--fontColor);
+}
+
+.container {
+    display: grid;
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    cursor: pointer;
+    padding: 20px;
+    margin-right: -10px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.lines {
+    display: block;
+    background-color: var(--menuColor);
+    width: 40px;
+    height: 6px;
+    border-radius: 10px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin: 0 auto;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: green;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px green;
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
